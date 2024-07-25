@@ -1,0 +1,80 @@
+/* General */
+
+/* Import Google Font at the top of the CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family:"Archivo Black", 'Times New Roman';
+    margin: 0;
+    padding: 0;
+    background: #c13d60;
+}
+
+header {
+    background-color:  #ffcccb;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #c13d60;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+section h2 {
+    text-align: center;
+}
+
+.cupcake {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cupcake img {
+    width: 200px;
+    height: auto;
+}
+
+footer {
+    background-color: #ffcccb;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+/* check this  */
+

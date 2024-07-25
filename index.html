@@ -4,6 +4,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PupCakes</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>PupCakes</h1>
+      <br />
+      <nav id="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#order">Order</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home">
+      <h2>Welcome to PupCakes</h2>
+      <p>Where Every Cupcake is Your Best Friend!</p>
+      <p>Discover our delightful dog-inspired cupcakes!</p>
+      <img src="welcome.png" alt="welcomephoto" />
+    </section>
+
+    <section id="menu">
+      <h2>Menu</h2>
+      <div class="cupcake">
+        <h3>Poodle Pink Cupcake</h3>
+        <img src="images/poodle-pink.jpg" alt="Poodle Pink Cupcake" />
+        <p>
+          A light and fluffy strawberry-flavored cupcake with pink lemonade
+          frosting.
+        </p>
+      </div>
+      <div class="cupcake">
+        <h3>Cocker Spaniel Caramel Cupcake</h3>
+        <img src="images/poodle-pink.jpg" alt="Spaniel Caramel Cupcake" />
+        <p>
+          A rich caramel cupcake with a hint of sea salt, capturing the warmth and affection of the Cocker
+          Spaniel.
+        </p>
+        <div class="cupcake">
+        <h3>King Charles Cavalier Red Velvet Cupcake</h3>
+        <img src="images/poodle-pink.jpg" alt="Cavalier Red Velvet Cupcake" />
+        <p>
+          A luxurious red
+          velvet cupcake topped with cream cheese frosting, reflecting the elegance
+          of the King Charles Cavalier.
+        </p>
+     <section id="order">
+      <h2>Order Now</h2>
+      <br>
+      Craving something sweet? Order your favorite PupCake today and indulge in
+      a delightful treat inspired by your beloved dog breeds. Freshly baked and
+      crafted with love, each cupcake is a perfect blend of flavor and fun.
+      Click here to place your order now!
+      <form id="orderForm">
+        <!-- Form fields here -->
+      </form>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <br>
+      <p>
+        Welcome to PupCakes, where our passion for baking meets our love for
+        dogs. Our story began with a simple idea: to create cupcakes that not
+        only taste amazing but also celebrate our furry friends. Inspired by the
+        unique characteristics of different dog breeds, each PupCake is crafted
+        with care, using the finest ingredients to ensure every bite is a
+        delightful experience. Our mission at PupCake is to bring joy to both
+        dog lovers and cupcake enthusiasts. We believe that every dog is
+        special, and so are our cupcakes. From the playful Chihuahua Choco Chip
+        to the sophisticated Poodle Perfection, our menu is designed to cater to
+        a variety of tastes and preferences. We are committed to providing our
+        customers with high-quality, freshly baked cupcakes that are as unique
+        as the dogs that inspire them. Join us on this sweet journey and
+        discover the perfect PupCake for every occasion. Thank you for choosing
+        PupCakes, where every cupcake is a celebration of our four-legged
+        friends.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <!-- Contact form  -->
+         <br>
+      <p>We'd love to hear from you! Whether you have questions, feedback, or want to place a special order, feel free to get in touch with us.</p>
+          <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" required></textarea>
+              
+              <button type="submit">Send</button>
+          </form>
+          <br>
+          <div class="contact-details">
+              <p>Email: info@PupCakes.com</p>
+              <p>Phone: (0113) 456-7890</p>
+              <p>Address: 123 Puppy Lane, Dogtown, UK</p>
+          </div>
+      </section>
+  </main>
+ </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 PupCakes. All rights reserved.</p>
+    </footer>
+     <script src="script.js"></script>
+  </body>
 </html>
