@@ -3,31 +3,30 @@
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
+/* General Reset */
 * {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-    font-family:"Archivo Black", 'Times New Roman';
     margin: 0;
     padding: 0;
-    background: #c13d60;
+    box-sizing: border-box;
 }
 
+/* Body Styles */
+body {
+    font-family: "Archivo Black", 'Times New Roman';
+    background: #ffcccb;
+    color: black;
+    line-height: 1.6;
+}
+
+/* Header Styles */
 header {
-    background-color:  #ffcccb;
+    background-color:  #c13d60;
     text-align: center;
-    padding: 1.3rem 0;  
-}
-
-#home p{
-    display: flex;
-    text-align: right;
+    padding: 1rem 0;  
+    height: 130px;  /* keep adjusting border length */
 }
 
 header h1 {
-    margin: 0;
     font-size: 3rem;
 }
 
@@ -36,12 +35,30 @@ header nav ul {
     padding: 0;
 }
 
+ .logo {
+    display: flex;
+    align-items:center;
+    width: 95px; 
+    height: auto; 
+    float: left;
+    margin-right: 0px; /* Space between logo and header text - figure out how to align*/
+    display: block; 
+    } 
+
+    .logo {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    display: block; 
+    } 
+     
 header nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 1rem;
-    transition: color 0.3s ease, background-color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-links a {
@@ -50,83 +67,234 @@ header nav ul li {
     font-size: 1rem;
 }
 
-/* Hover Effect */
 .nav-links a:hover {
-    color: #c13d60;
+    color: #ffcccb;
 }
 
 section {
     padding: 2rem;
     text-align: center;
-    align-items: center;
 }
 
-.dog.img {
-    float: right;
-    width: 25%;  
-    height: auto;  
-    display: block;
-    margin: 0;
-    padding: 10px;              
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
-    margin-right: 220px;
-    margin: -20px 0 150px 0;
-    position: relative;
-    top: -20px; /* Moves the image up*/
-   } 
-
+#home h2, #menu h2, #order h2, #contact h2 {
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+    color:#c13d60;
+}
 
 .pos_cen {
-    position: absolute;
     width: 70%;
-    left: 15%;
-    top: 20%;
-    text-align: left;
-    flex: 1;
-    width: 70%;
-    margin-right: 20px;
-} 
-
-#home p {
-    text-align: left;
-}
-
-h2 {
-    font-size: 2.1rem;
-}
-
-p {
-    text-align: auto;
-    position: relative;
-    top: 90px; 
-}
-
-/* .dog.img:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-} */
-
-/* use this for menu hover  */
-
-section h2 {
-    text-align: center;
+    margin: 20px auto;
+    font-weight: 100;
+    color: #333;
 }
 
 .cupcake {
     text-align: center;
-    margin: 2rem 0; */
-} 
-
-.cupcake img {
-    width: 200px;
-    height: auto;
+    margin: 2rem 0;
 }
 
+/* MENU SECTION */
+
+#menu {
+    display: flex;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 2.5srem;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    padding: 20px;
+    text-size-adjust;
+}
+
+.cupcake {
+    margin-top: 2rem;
+    flex: 10 40 20px; /* spacing between menu items */
+    margin: 30px 10px; /* keep playing with the Space between items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    white-space: normal; 
+}
+
+.cupcake img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cupcake h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #c13d60;
+}
+
+.cupcake p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* ORDER FORM */
+
+#order {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#order h2 {
+    font-size: 2.5rem;
+    color: #c13d60;
+    margin-bottom: 1rem;
+}
+
+#order p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    width: 70%;
+    color: #333;
+    margin: 5px auto;
+}
+
+#orderForm {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#orderForm label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem;
+}
+
+#orderForm input, #orderForm textarea, #orderForm select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: #c13d60;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #a12e50;
+}
+
+/* CONTACT FORM */
+
+#contact {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #c13d60;
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    width: 70%;
+    margin: 2px auto;
+    /* adjust space between contac and mini paragraph */
+}
+
+#contactForm {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contactForm label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem;
+    color: #292f33;
+}
+
+#contactForm input, #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+    /* background-color: #f9f9f9; */
+}
+
+#contactForm input:focus, #contactForm textarea:focus {
+    border-color: #c13d60;
+    outline: none;
+    background-color: #fff;
+}
+
+#contactForm textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+button[type="submit"] {
+    background-color: #c13d60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+#send-button:hover {
+    background-color: #a32e4f;
+}
+
+.submit-btn:hover {
+    background-color: #a12e50;
+}
+.submit-btn:active {
+    background-color: #901a45;
+}
+
+/* Footer  */
 footer {
-    background-color: #ffcccb;
+    background-color: #c13d60;
     text-align: center;
     padding: 1rem 0;
 }
-
-
-/* check this  */
 
