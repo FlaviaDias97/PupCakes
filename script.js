@@ -1,34 +1,39 @@
 document.getElementById('orderForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form from refreshing the page
+    event.preventDefault(); 
+    
+    const name = document.getElementById('orderName').value;
+    const email = document.getElementById('orderEmail').value;
+    const phone = document.getElementById('orderPhone').value;
+    const address = document.getElementById('orderAddress').value;
+    const cupcakeSelection = document.getElementById('cupcakeSelection').value;
+    const quantity = document.getElementById('orderQuantity').value;
+    const instructions = document.getElementById('orderInstructions').value;
 
-  // Gather form data
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const cupcake = document.getElementById('cupcake').value;
+    
+    const orderData = {
+        name: name,
+        email: email,
+        phone: phone,
+        address: address,
+        cupcakeSelection: cupcakeSelection,
+        quantity: quantity,
+        instructions: instructions
+    };
 
-  // Create an object to send to the server
-  const orderData = {
-      name: name,
-      email: email,
-      cupcake: cupcake
-  };
-
-  // Send data to server using Fetch API
-  fetch('/place-order', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(orderData)
-  })
-  .then(response => response.json())
-  .then(data => {
-      // Update the order status
-      document.getElementById('orderStatus').innerText = data.message;
-  })
-  .catch(error => {
-      console.error('Error:', error);
-      document.getElementById('orderStatus').innerText = 'Something went wrong. Please try again.';
-  });
+    fetch('/place-order', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(orderData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        // 
+        document.getElementById('orderStatus').innerText = data.message;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('orderStatus').innerText = 'Something went wrong. Please try again.';
+    });
 });
-

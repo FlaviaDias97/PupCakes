@@ -1,24 +1,35 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+    const orderData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        cupcakeSelection: document.getElementById('cupcakeSelection').value,
+        quantity: document.getElementById('quantity').value,
+        instructions: document.getElementById('instructions').value
+    };
 
-app.use(bodyParser.json());
-app.use(express.static('public')); // Serve static files (HTML, CSS, JS)
-
-// Handle POST request to /place-order
-app.post('/place-order', (req, res) => {
-    const { name, email, cupcake } = req.body;
-
-    // Here you would normally save the order to a database
-    console.log(`Order received: ${name}, ${email}, ${cupcake}`);
-
-    // Send a response back to the client
-    res.json({ message: `Thank you, ${name}! Your ${cupcake} order has been placed.` });
+    fetch('/place-order', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(orderData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        document.getElementById('orderStatus').innerText = data.message;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('orderStatus').innerText = 'Something went wrong. Please try again.';
+    });
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});

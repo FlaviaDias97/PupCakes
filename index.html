@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PupCakes</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="script.js" />
-    <link rel="stylesheet" href="server.js" />
+    <script src="script.js"></script>
+    <script src="server.js"></script>
   </head>
   <body>
     <header>
@@ -83,38 +83,38 @@
       </p>
       <form id="orderForm">
         <h3>Order Form</h3>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+        <label for="orderName">Name:</label>
+        <input type="text" id="orderName" name="name" required />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <label for="orderEmail">Email:</label>
+        <input type="email" id="orderEmail" name="email" required />
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required />
+        <label for="orderPhone">Phone Number:</label>
+        <input type="tel" id="orderPhone" name="phone" required />
 
-        <label for="address">Delivery Address:</label>
-        <textarea id="address" name="address" rows="4" required></textarea>
+        <label for="orderAddress">Delivery Address:</label>
+        <textarea id="orderAddress" name="address" rows="4" required></textarea>
 
         <label for="cupcakeSelection">Cupcake Selection:</label>
         <select id="cupcakeSelection" name="cupcakeSelection" required>
           <option value="Poodle Pink">Poodle Pink</option>
-          <option value="cocker-spaniel-caramel">Cocker Spaniel Caramel</option>
-          <option value="King Charles Cavalier">Cavalier Red Velvet</option>
+          <option value="Cocker Spaniel Caramel">Cocker Spaniel Caramel</option>
+          <option value="Cavalier Red Velvet">Cavalier Red Velvet</option>
         </select>
-        <label for="quantity">Quantity:</label>
-        <input
-          type="number"
-          id="quantity"
-          name="quantity"
-          min="1"
-          value="1"
-          required
-        />
-        <label for="instructions">Additional Instructions:</label>
-        <textarea id="instructions" name="instructions" rows="4"></textarea>
+
+        <label for="orderQuantity">Quantity:</label>
+        <input type="number" id="orderQuantity" name="quantity" min="1" value="1" required />
+
+        <label for="orderInstructions">Additional Instructions:</label>
+        <textarea id="orderInstructions" name="instructions" rows="4"></textarea>
 
         <button type="submit" class="submit-btn">Place Order</button>
-      </form>
+    </form>
+
+   
+    <p id="orderStatus"></p>
+</section>
+
     </section>
     <section id="contact">
       <h2>Contact Us</h2>
@@ -134,7 +134,7 @@
 
         <button type="submit" id="send-button">Send</button>
       </form>
-      <br />
+      <br/>
 
       <div class="contact-details">
         <p>Email: info@PupCakes.co.uk</p>
