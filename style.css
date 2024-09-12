@@ -16,41 +16,73 @@ body {
     line-height: 1.6;
 }
 
-/* Header Styles */
 header {
-    background-color:  #c13d60;
+    background-color: #c13d60;
     text-align: center;
-    padding: 1rem 0;  
-    height: 130px;  /* keep adjusting border length */
+    padding: 1rem 0;
+    height: 130px; 
+    position: relative; 
 }
 
 header h1 {
     font-size: 3rem;
+    margin-bottom: 1.5rem; 
+    height: 59px;
+    text-align: center;
+    margin: 0;
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
+    margin-top: 0; 
 }
 
- .logo {
-    display: flex;
-    align-items:center;
-    width: 95px; 
-    height: auto; 
-    float: left;
-    margin-right: 0px; /* Space between logo and header text - figure out how to align*/
-    display: block; 
-    } 
+header nav ul li {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
 
-    .logo {
-    width: 40px; 
-    height: 40px; 
+.logo {
+    display: flex;
+    align-items: center;
+    width: 150px;   
+    height: 50px;  
+    float: left;
+    margin-right: 10px;  
+    border-radius: 50%;  
+    object-fit: cover;   
+}
+
+
+
+header nav {
+    margin-top: 10px; 
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header .logo-container {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%); 
+}
+
+.logo {
+    width: 100px; 
+    height: 100px; 
     border-radius: 50%; 
     object-fit: cover; 
-    display: block; 
-    } 
-     
+}
+
 header nav ul li {
     display: inline-block;
     margin: 0 1rem;
@@ -83,14 +115,11 @@ section {
 .pos_cen {
     width: 70%;
     margin: 20px auto;
-    font-weight: 100;
+    font-weight: 300;
     color: #333;
+    font-family: 'Poppins', sans-serif; 
 }
 
-.cupcake {
-    text-align: center;
-    margin: 2rem 0;
-}
 
 /* MENU SECTION */
 
@@ -105,6 +134,7 @@ section {
     white-space: nowrap; 
     padding: 20px;
     text-size-adjust;
+    font-family: 'Poppins', sans-serif; 
 }
 
 .cupcake {
@@ -155,13 +185,15 @@ section {
 #order p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    width: 70%;
     color: #333;
-    margin: 5px auto;
+    width: 70%;
+    margin: 2px auto;
+    /* adjust space between contac and mini paragraph */
 }
 
 #orderForm {
     max-width: 500px;
+    width: 100%;
     margin: 0 auto;
     text-align: left;
     background-color: white;
@@ -176,7 +208,9 @@ section {
     font-size: 1rem;
 }
 
-#orderForm input, #orderForm textarea, #orderForm select {
+#orderForm input, 
+#orderForm textarea, 
+#orderForm select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -184,6 +218,7 @@ section {
     border: 1px solid #ccc;
     font-size: 1rem;
 }
+
 
 .submit-btn {
     background-color: #c13d60;
@@ -252,7 +287,6 @@ section {
     border: 1px solid #ccc;
     font-size: 1rem;
     box-sizing: border-box;
-    /* background-color: #f9f9f9; */
 }
 
 #contactForm input:focus, #contactForm textarea:focus {
@@ -268,14 +302,14 @@ section {
 
 button[type="submit"] {
     background-color: #c13d60;
-    color: white;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
-    align-self: center;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 #send-button:hover {
@@ -289,10 +323,30 @@ button[type="submit"] {
     background-color: #901a45;
 }
 
+/* contact details */
+
+.contact-details {
+    display: flex;
+    justify-content: start; 
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 0.3rem; 
+    color: #333;
+}
+
+.contact-details p {
+    font-size: 12px !important; /
+    color: #333;
+    white-space: nowrap;
+    margin-right: 20px; 
+    padding-right: 10px; /
+    display: inline-block; /
+}
 /* Footer  */
 footer {
     background-color: #c13d60;
     text-align: center;
     padding: 1rem 0;
+    font-size: 8px !important;  
 }
 
