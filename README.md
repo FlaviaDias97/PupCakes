@@ -35,4 +35,10 @@ License
 This project is licensed under the MIT License.
 
 Contact
-For questions or suggestions, please contact: Name: Flavia Dias  Email: flaviadias97@yahoo.com
+Feel free to connect with me via:
+* LinkedIn: Flávia Dias
+* GitHub: FlaviaDias97
+* Email: flaviadias97@yahoo.com
+
+
+Thank you for visiting!
