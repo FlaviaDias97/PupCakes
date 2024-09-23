@@ -1,8 +1,6 @@
-// Handle Order Form Submission
 document.getElementById('orderForm').addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevent the default form submission
+    event.preventDefault();  
 
-    // Get form data
     const name = document.getElementById('orderName').value.trim();
     const email = document.getElementById('orderEmail').value.trim();
     const phone = document.getElementById('orderPhone').value.trim();
@@ -11,13 +9,12 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
     const quantity = document.getElementById('orderQuantity').value;
     const instructions = document.getElementById('orderInstructions').value.trim();
 
-    // Validate required fields
+
     if (!name || !email || !phone || !address || !cupcakeSelection || quantity <= 0) {
         document.getElementById('orderStatus').textContent = 'Please fill out all required fields correctly.';
         return;
     }
 
-    // Send order data to the server
     fetch('/place-order', {
         method: 'POST',
         headers: {
@@ -40,33 +37,30 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
         return response.json();
     })
     .then(data => {
-        // Display success message
+       
         document.getElementById('orderStatus').textContent = 'Thank you, order received!';
-        document.getElementById('orderForm').reset(); // Reset the form after submission
+        document.getElementById('orderForm').reset(); 
     })
     .catch(error => {
-        // Custom error handling: just log the error and show the success message
+        
         console.error('Error:', error);
-        document.getElementById('orderStatus').textContent = 'Thank you, order received!'; // Same message on error
+        document.getElementById('orderStatus').textContent = 'Thank you, order received!'; 
     });
 });
 
-// Handle Contact Form Submission
+/
 document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevent the default form submission
-
-    // Get form data
+    event.preventDefault();  
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
 
-    // Validate required fields
     if (!name || !email || !message) {
         document.getElementById('contactStatus').textContent = 'Please fill out all required fields.';
         return;
     }
 
-    // Send contact form data to the server
+    
     fetch('/send-message', {
         method: 'POST',
         headers: {
@@ -81,13 +75,13 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         return response.json();
     })
     .then(data => {
-        // Display success message
+        
         document.getElementById('contactStatus').textContent = 'Thank you for your message!';
-        document.getElementById('contactForm').reset(); // Reset the form after submission
+        document.getElementById('contactForm').reset(); 
     })
     .catch(error => {
-        // Custom error handling: just log the error and show the success message
+       
         console.error('Error:', error);
-        document.getElementById('contactStatus').textContent = 'Thank you for your message!'; // Same message on error
+        document.getElementById('contactStatus').textContent = 'Thank you for your message!'; 
     });
 });
