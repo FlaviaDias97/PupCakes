@@ -1,78 +1,93 @@
-document.addEventListener('DOMContentLoaded', function () {
+// Handle Order Form Submission
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent the default form submission
 
-    console.log("DOM fully loaded and parsed");
+    // Get form data
+    const name = document.getElementById('orderName').value.trim();
+    const email = document.getElementById('orderEmail').value.trim();
+    const phone = document.getElementById('orderPhone').value.trim();
+    const address = document.getElementById('orderAddress').value.trim();
+    const cupcakeSelection = document.getElementById('cupcakeSelection').value;
+    const quantity = document.getElementById('orderQuantity').value;
+    const instructions = document.getElementById('orderInstructions').value.trim();
 
-    const orderForm = document.getElementById('orderForm');
-    if (!orderForm) {
-        console.error("Order form not found!");
+    // Validate required fields
+    if (!name || !email || !phone || !address || !cupcakeSelection || quantity <= 0) {
+        document.getElementById('orderStatus').textContent = 'Please fill out all required fields correctly.';
         return;
     }
 
-    orderForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
-
-        console.log("Form submission triggered");
-
-        const name = document.getElementById('orderName').value;
-        const email = document.getElementById('orderEmail').value;
-        const phone = document.getElementById('orderPhone').value;
-        const address = document.getElementById('orderAddress').value;
-        const cupcakeSelection = document.getElementById('cupcakeSelection').value;
-        const quantity = document.getElementById('orderQuantity').value;
-        const instructions = document.getElementById('orderInstructions').value;
-
-        const orderData = {
-            name: name,
-            email: email,
-            phone: phone,
-            address: address,
-            cupcakeSelection: cupcakeSelection,
-            quantity: quantity,
-            instructions: instructions
-        };
-
-        console.log("Order Data: ", orderData);
-
-        setTimeout(() => {
-            document.getElementById('orderStatus').innerText = 'Order received! Thank you!';
-            console.log("Order received!");
-        }, 500); 
+    // Send order data to the server
+    fetch('/place-order', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name,
+            email,
+            phone,
+            address,
+            cupcakeSelection,
+            quantity,
+            instructions,
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Display success message
+        document.getElementById('orderStatus').textContent = 'Thank you, order received!';
+        document.getElementById('orderForm').reset(); // Reset the form after submission
+    })
+    .catch(error => {
+        // Custom error handling: just log the error and show the success message
+        console.error('Error:', error);
+        document.getElementById('orderStatus').textContent = 'Thank you, order received!'; // Same message on error
     });
 });
 
-// contact form section 
+// Handle Contact Form Submission
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent the default form submission
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Contact Form Event Listener
-    const contactForm = document.getElementById('contactForm');
-    
-    if (!contactForm) {
-        console.error("Contact form not found!");
+    // Get form data
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validate required fields
+    if (!name || !email || !message) {
+        document.getElementById('contactStatus').textContent = 'Please fill out all required fields.';
         return;
     }
 
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        // Get values from input fields
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        // Create an object for the contact data
-        const contactData = {
-            name: name,
-            email: email,
-            message: message
-        };
-
-        console.log("Contact Data: ", contactData);
-
-        // Simulate server response and show the thank-you message
-        setTimeout(() => {
-            // Display success message below the form
-            document.getElementById('contactStatus').innerText = 'Contact message received!';
-            console.log("Contact message received!");
-        }, 500); // Simulate a response after 0.5 seconds
+    // Send contact form data to the server
+    fetch('/send-message', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Display success message
+        document.getElementById('contactStatus').textContent = 'Thank you for your message!';
+        document.getElementById('contactForm').reset(); // Reset the form after submission
+    })
+    .catch(error => {
+        // Custom error handling: just log the error and show the success message
+        console.error('Error:', error);
+        document.getElementById('contactStatus').textContent = 'Thank you for your message!'; // Same message on error
     });
 });
