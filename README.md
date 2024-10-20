@@ -1,5 +1,5 @@
 # PupCakes
-Portfolio project website 1!
+Portfolio project website!
 
 Welcome to the PupCakes website repository. This project is a fictional bakery site featuring dog inspired cupcakes.
 
@@ -31,14 +31,14 @@ Contributions are welcome! Here’s how you can help:
 4. Push to the branch: git push origin feature/YourFeature
 5. Submit a pull request.
 
-License
-This project is licensed under the MIT License.
-
 Contact
 Feel free to connect with me via:
-* LinkedIn: Flávia Dias
+* LinkedIn: Flávia Dias / www.linkedin.com/in/flávia-dias-02851516a
 * GitHub: FlaviaDias97
 * Email: flaviadias97@yahoo.com
+
+License
+This project is licensed under the MIT License.
 
 
 Thank you for visiting!
