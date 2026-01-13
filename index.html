@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PupCakes</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
     <script src="script.js"></script>
     <script src="server.js"></script>
+    
   </head>
   <body>
     <header>
@@ -26,37 +28,43 @@
     <section id="home">
       <h2>Welcome to PupCakes</h2>
       <div class="pos_cen">
-        <p>
-          Where Every Cupcake is Your Best Friend! Discover our delightful dog-inspired cupcakes and experience the joy of our love for baking and dogs coming together. At PupCakes, each PupCake is crafted with the finest ingredients, inspired by the unique traits of different dog breeds. From the playful Cocker Spaniel Caramel to the elegant Poodle Perfection, our mission is to bring happiness to dog lovers and cupcake enthusiasts alike. Celebrate with us and enjoy high-quality, freshly baked cupcakes for every occasion. Thank you for choosing PupCakes!
+        <br>
+          Where Every Cupcake is Your Best Friend! Discover our delightful dog-inspired cupcakes and experience the joy of our love for baking and dogs coming together. At PupCakes, each PupCake is crafted with the finest ingredients, inspired by the unique traits of different dog breeds. From the playful Cocker Spaniel Caramel to the elegant Poodle Perfection, our mission is to bring happiness to dog lovers and cupcake enthusiasts alike. Celebrate with us and enjoy high-quality, freshly baked cupcakes for every occasion. <br>  Thank you for choosing PupCakes! </br>
         </p>
       </div>
     </section>
     <section id="menu">
       <div class="cupcake">
         <h3>Poodle Pink</h3>
-        <img src="./PcksImages/poodle-pink.png" alt="Poodle Pink Cupcake Picture" />
+        <picture>
+          <source media="(max-width: 60px)" srcset="./PcksImages/poodle-pink-small.png">
+          <source media="(max-width: 50px)" srcset="./PcksImages/poodle-pink-medium.png">
+          <img src="./PcksImages/poodle-pink.png" alt="Poodle Pink Cupcake Picture" />
+        </picture>
         <p>
           A light and fluffy strawberry-flavored cupcake with pink lemonade
           frosting!
         </p>
       </div>
       <div class="cupcake">
-        <h3>Cocker Spaniel Caramel</h3>
-        <img
-          src="./PcksImages/cocker-spaniel-caramel.png"
-          alt="Picture of Spaniel Caramel Cupcake"
-        />
+        <h4>Cocker Spaniel Caramel</h4>
+        <picture>
+          <source media="(max-width: 60px)" srcset="./PcksImages/cocker-spaniel-caramel-small.png">
+          <source media="(max-width: 50px)" srcset="./PcksImages/cocker-spaniel-caramel-medium.png">
+          <img src="./PcksImages/cocker-spaniel-caramel.png" alt="Picture of Spaniel Caramel Cupcake" />
+        </picture>
         <p>
           A rich caramel cupcake with a hint of sea salt, capturing the warmth
           and affection of the Cocker Spaniel!
         </p>
       </div>
       <div class="cupcake">
-        <h3>King Charles Cavalier Red Velvet </h3>
-        <img
-          src="./PcksImages/king-charles-cavalier-red-velvet.png"
-          alt="Picture of Cavalier Red Velvet Cupcake"
-        />
+        <h5>King Charles Cavalier Red Velvet </h5>
+        <picture>
+          <source media="(max-width: 60px)" srcset="./PcksImages/king-charles-cavalier-red-velvet-small.png">
+          <source media="(max-width:  50px)" srcset="./PcksImages/king-charles-cavalier-red-velvet-medium.png">
+          <img src="./PcksImages/king-charles-cavalier-red-velvet.png" alt="Picture of Cavalier Red Velvet Cupcake" />
+        </picture>
         <p>
           A luxurious red velvet cupcake topped with cream cheese frosting,
           reflecting the elegance of the King Charles Cavalier!
@@ -65,7 +73,7 @@
     </section>
 
     <section id="order">
-      <h2>Order Your PupCake Today!</h2>
+      <h2>Order Your PupCake(s) Today!</h2>
       <p>
         Indulge in our delicious, dog-inspired cupcakes. Freshly baked and
         delivered to your door!
