@@ -24,6 +24,9 @@ While data persistence is not implemented, the project is designed to demonstrat
 - Server-side validation and handling
 - Integration between frontend and backend systems 
 
+Live Link & Demo
+ - https://pupcakes.netlify.app
+
 How to Run Locally
 1. Clone the repo
 2. Install dependencies: `npm install`
